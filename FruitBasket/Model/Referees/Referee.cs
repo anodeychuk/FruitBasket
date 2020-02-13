@@ -28,9 +28,9 @@ namespace FruitBasket.Referees
         public event Action<int> Cheating;
 
         /// <summary>
-        /// Gets the real weight of the fruit basket.
+        /// Gets or sets the real weight of the fruit basket.
         /// </summary>
-        public int FruitBasketWeight { get; }
+        public int FruitBasketWeight { get; set; }
 
         /// <summary>
         /// Gets or sets the game rounds.
@@ -44,7 +44,7 @@ namespace FruitBasket.Referees
         {
             Numbers = new List<KeyValuePair<int, int>>();
             Players = new List<IPlayer>();
-            FruitBasketWeight = new Random().Next(Config.MinWeight, Config.MaxWeight); // RandomProvider.RndRound(Config.MinWeight, Config.MaxWeight);
+            FruitBasketWeight = new Random().Next(Config.MinWeight, Config.MaxWeight);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace FruitBasket.Referees
             while (n > 1)
             {
                 n--;
-                int k = rnd.Next(n + 1);//RandomProvider.RndRound(0, n + 1);
+                int k = rnd.Next(n + 1);
                 var value = Players[k];
                 Players[k] = Players[n];
                 Players[n] = value;

@@ -59,6 +59,21 @@ namespace TestFruitBasket
         }
 
         /// <summary>
+        /// Checks that the number of rounds to skip is determined correctly.
+        /// </summary>
+        [Fact]
+        public void GetSkipRoundCountTest()
+        {
+            var referee = new Referee();
+
+            referee.FruitBasketWeight = 100;
+
+            Assert.True(referee.GetSkipRoundCount(70) == 2);
+
+            Assert.True(referee.GetSkipRoundCount(130) == 2);
+        }
+
+        /// <summary>
         /// Gets a preset referee
         /// </summary>
         /// <returns>The referee with all types players</returns>

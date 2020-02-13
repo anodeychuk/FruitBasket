@@ -10,9 +10,9 @@ namespace FruitBasket.Referees.Interfaces
     public interface IReferee
     {
         /// <summary>
-        /// Gets the real weight of the fruit basket.
+        /// Gets or sets the real weight of the fruit basket.
         /// </summary>
-        int FruitBasketWeight { get; }
+        int FruitBasketWeight { get; set; }
 
         /// <summary>
         /// Gets or sets the game rounds.
