@@ -35,11 +35,11 @@ namespace FruitBasket.View
         /// <returns>The player name.</returns>
         public static string GetPlayerName(int id)
         {
-            Console.WriteLine($"Please enter player name for {id} player:");
+            Console.WriteLine($"Please enter player name for {id} player (2 to 25 letters):");
             int attempt = ViewConfig.NumberAttempts;
             string playerName = Console.ReadLine();
 
-            while (string.IsNullOrWhiteSpace(playerName) && attempt > 0)
+            while (string.IsNullOrWhiteSpace(playerName) && (playerName.Length > 25) && (playerName.Length < 2) && attempt > 0)
             {
                 Console.WriteLine("You have entered an invalid name. Please try again.");
                 attempt--;
